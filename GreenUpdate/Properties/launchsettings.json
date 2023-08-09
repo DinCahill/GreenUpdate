@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "GreenUpdate (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "GreenUpdate (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
