@@ -113,6 +113,12 @@ public partial class App : Application
 
         App.GetService<IAppNotificationService>().Show(string.Format("AppNotificationSamplePayload".GetLocalized(), AppContext.BaseDirectory));
 
+        // Set default window size.
+        var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(MainWindow);
+        var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+        var appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+        appWindow.Resize(new Windows.Graphics.SizeInt32 { Width = 660, Height = 300 });
+
         await App.GetService<IActivationService>().ActivateAsync(args);
     }
 }
