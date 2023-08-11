@@ -12,14 +12,14 @@
 
   <Identity
     Name="d10a3327-1913-493e-9109-965dcd8d5ca0"
-    Publisher="CN=DinCahill"
+    Publisher="CN=Din"
     Version="1.0.0.0" />
     
   <mp:PhoneIdentity PhoneProductId="d10a3327-1913-493e-9109-965dcd8d5ca0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
     
   <Properties>
     <DisplayName>GreenUpdate</DisplayName>
-    <PublisherDisplayName>DinCahill</PublisherDisplayName>
+    <PublisherDisplayName>Din</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
