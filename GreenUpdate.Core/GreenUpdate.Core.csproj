@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+	<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>GreenUpdate.Core</RootNamespace>
     <Platforms>AnyCPU;x64;x86</Platforms>
