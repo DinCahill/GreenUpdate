@@ -75,5 +75,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
-        path: GreenUpdate\GreenUpdate\bin\x64\Release\net7.0-windows10.0.19041.0\AppPackages\GreenUpdate_1.0.0.0_x64_Test\*.msix
+        path: ${{ env.Solution_Name }}\${{ env.Solution_Name }}\bin\${{ matrix.platform }}\${{ matrix.configuration }}\**\AppPackages\**\*.msix
         # path: ${{ env.Solution_Name }}\\Packages
