@@ -75,5 +75,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
-        path: ${{ env.Solution_Name }}\${{ env.Solution_Name }}\bin\${{ matrix.platform }}\${{ matrix.configuration }}\**\AppPackages\**\*.msix
+        path: GreenUpdate\GreenUpdate\bin\${{ matrix.platform }}\${{ matrix.configuration }}\**\AppPackages\**\
         # path: ${{ env.Solution_Name }}\\Packages
