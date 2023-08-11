@@ -25,6 +25,7 @@ jobs:
 
     env:
       Solution_Name: GreenUpdate.sln                         # Replace with your solution name, i.e. App1.sln.
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
 
     steps:
     - name: Checkout
