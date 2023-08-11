@@ -59,11 +59,10 @@ jobs:
     - name: Create the app package
       run: |
         $certificatePath = Join-Path -Path $env:GITHUB_WORKSPACE -ChildPath "GitHubActionsWorkflow.pfx"
-        msbuild $env:Solution_Name /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile="$certificatePath" /p:AppxPackageDir="$env:Appx_Package_Dir" /p:GenerateAppxPackageOnBuild=true
+        msbuild $env:Solution_Name /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile="$certificatePath" /p:GenerateAppxPackageOnBuild=true
       env:
         Appx_Bundle: Never
         Appx_Package_Build_Mode: SideloadOnly
-        Appx_Package_Dir: Packages\
         Configuration: ${{ matrix.configuration }}
         Platform: ${{ matrix.platform }}
 
@@ -73,7 +72,8 @@ jobs:
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload MSIX package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: MSIX Package
-        path: ${{ env.Solution_Name }}\\Packages
+        path: GreenUpdate\GreenUpdate\bin\x64\Release\net7.0-windows10.0.19041.0\AppPackages\GreenUpdate_1.0.0.0_x64_Test\*.msix
+        # path: ${{ env.Solution_Name }}\\Packages
